@@ -424,11 +424,11 @@
             // 4. 利润=美元售价*参数2*(1-0.05)-参数4-参数6
             const profit = usdPrice * rateUsdCny * (1 - 0.05) - productCost - shippingCost;
 
-            // Update result displays, rounded to 2 decimal places
-            usdPriceEl.textContent = usdPrice.toFixed(2);
-            eurPriceEl.textContent = eurPrice.toFixed(2);
-            usdtPriceEl.textContent = usdtPrice.toFixed(2);
-            profitEl.textContent = profit.toFixed(2);
+            // Update result displays, showing only the integer part (truncating decimals)
+            usdPriceEl.textContent = Math.floor(usdPrice);
+            eurPriceEl.textContent = Math.floor(eurPrice);
+            usdtPriceEl.textContent = Math.floor(usdtPrice);
+            profitEl.textContent = Math.floor(profit);
         }
 
         // Function to copy result to clipboard
